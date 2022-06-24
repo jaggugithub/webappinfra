@@ -3,7 +3,7 @@ pipeline {
     environment {
         PATH = "/opt/apachemaven/bin:$PATH"
     }
-    // stages {
+    stages {
     //     stage('SCM Checkout') {
     //         steps{
 
