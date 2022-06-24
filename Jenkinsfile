@@ -3,26 +3,18 @@ pipeline {
     environment {
         PATH = "/opt/apachemaven/bin:$PATH"
     }
-    stages {
-    //     stage('SCM Checkout') {
-    //         steps{
-
-    //         git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git'
-    //         sh "pwd"
-    //         }
-    //     }
-        dir('infra') {
-            git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git'
+    dir('infra') {
+        git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git'
+        stages {
             stage('Create Infrastructure') {
                 steps{
                     sh "terraform init"
                     sh "terraform plan"
                     sh "terraform apply"
-             }
+                }
             }
         }
-
-    }
+    }    
 }
 
 
