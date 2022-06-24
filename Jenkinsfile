@@ -6,7 +6,9 @@ pipeline {
     stages {
         stage('SCM Checkout') {
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GITHUB', name: ' webappinfra ', refspec: 'infra', url: 'git@github.com:jaggugithub/webappinfra.git']]])
+                sh "pwd"
+            git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git'
+            extensions: [[$class: 'SparseCheckoutPaths', sparseCheckoutPaths:[[$class:'SparseCheckoutPath', path:'/infra']]]],
             }
         }
 
