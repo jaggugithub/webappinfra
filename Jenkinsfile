@@ -6,12 +6,14 @@ pipeline {
     stages {
         stage('SCM Checkout') {
             steps{
-            git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra/infra.git'
+            git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git'
+            extensions: [[$class: 'SparseCheckoutPaths', sparseCheckoutPaths:[[$class:'SparseCheckoutPath', path:'/infra']]]],
             }
         }
 
         stage('Create Infrastructure') {
             steps{
+                sh "git archive --remote=${'git@github.com:jaggugithub/webappinfra.git} ${ref} ${path}"
                 sh "terraform init"
                 sh "terraform plan"
                 sh "terraform apply"
