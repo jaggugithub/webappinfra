@@ -3,11 +3,11 @@ pipeline {
     environment {
         PATH = "/opt/apachemaven/bin:$PATH"
     }
-    dir('subDir') {
-        git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git'
-        stages {
-            stage('Create Infrastructure') {
-                steps{
+    stages {
+        stage('Create Infrastructure') {
+            steps{
+                dir('infra') {
+                    git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git'
                     sh "terraform init"
                     sh "terraform plan"
                     sh "terraform apply"
