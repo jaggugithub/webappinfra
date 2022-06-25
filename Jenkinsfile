@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    environment {
-        PATH = "/opt/apachemaven/bin:$PATH"
-    }
+    // environment {
+    //     PATH = "/opt/apachemaven/bin:$PATH"
+    // }
     stages {
         // stage('SCM Checkout') {
         //     steps {
