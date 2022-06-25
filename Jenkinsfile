@@ -3,7 +3,7 @@ pipeline {
     environment {
         PATH = "/opt/apachemaven/bin:$PATH"
     }
-    dir('infra') {
+    dir('subDir') {
         git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git'
         stages {
             stage('Create Infrastructure') {
