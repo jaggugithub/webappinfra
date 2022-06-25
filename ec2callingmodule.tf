@@ -1,6 +1,6 @@
 module "ec2_calling_module" {
 
-  source = "git::ssh://git@github.com:jaggugithub/webappinfra.git//modules/ec2?ref=main"
+   source = "git@github.com:jaggugithub/webappinfra.git//modules/ec2"
   
 
   instance_count = var.instancecount
