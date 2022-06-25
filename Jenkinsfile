@@ -4,12 +4,17 @@ pipeline {
         PATH = "/opt/apachemaven/bin:$PATH"
     }
     stages {
+        stage('SCM Checkout') {
+            steps {
+                git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/JavaWebApp.git'
+            }
+        }
         stage('Create Infrastructure') {
             steps{
-                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git']]])
-                    sh "terraform init"
-                    sh "terraform plan"
-                    sh "terraform apply"
+                //checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git']]])
+                sh "terraform init"
+                sh "terraform plan"
+                sh "terraform apply"
             }
         }
     }    
