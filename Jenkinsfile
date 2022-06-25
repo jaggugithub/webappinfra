@@ -5,14 +5,20 @@ pipeline {
     }
     stages {
         stage('Create Infrastructure') {
-            steps{
-                dir('infra') {
-                    git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git'
+            matrix {
+                options {
+                    checkoutToSubdirectory 'infra'
                     sh "terraform init"
                     sh "terraform plan"
                     sh "terraform apply"
                 }
             }
+            // steps{
+            //         git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git'
+            //         sh "terraform init"
+            //         sh "terraform plan"
+            //         sh "terraform apply"
+            // }
         }
     }    
 }
@@ -20,7 +26,7 @@ pipeline {
 
 
 
-
+checkout([$class: 'GitSCM', branches: [[name: '*/branchname']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'MyDirectory']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'myId', url: 'https://github.com/jenkinsci/jenkins.git']]]
 
 
 
