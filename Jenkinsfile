@@ -26,7 +26,7 @@ pipeline {
 
 
 
-checkout([$class: 'GitSCM', branches: [[name: '*/branchname']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'MyDirectory']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'myId', url: 'https://github.com/jenkinsci/jenkins.git']]]
+//checkout([$class: 'GitSCM', branches: [[name: '*/branchname']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'MyDirectory']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'myId', url: 'https://github.com/jenkinsci/jenkins.git']]]
 
 
 
