@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Create Infrastructure') {
             steps{
-                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [[$class: 'SparseCheckoutPaths', sparseCheckoutPaths: [[path: 'infra/*']]]], userRemoteConfigs: [[credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git']]])
+                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GITHUB', name: 'webappinfra', refspec: '+refs/heads/main:refs/remotes/origin/main/infra', url: 'git@github.com:jaggugithub/webappinfra.git']]])
                     sh "terraform init"
                     sh "terraform plan"
                     sh "terraform apply"
@@ -18,6 +18,7 @@ pipeline {
 
 
 
+// checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [[$class: 'SparseCheckoutPaths', sparseCheckoutPaths: [[path: 'infra/*']]]], userRemoteConfigs: [[credentialsId: 'GITHUB', url: 'git@github.com:jaggugithub/webappinfra.git']]])
 
 //         stage('Build Code') {
 //             steps {  
