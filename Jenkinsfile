@@ -2,14 +2,17 @@ pipeline {
     agent any
     stages {
         stage('Initialize Infrastructure') {
-            steps{
+            steps {
                 sh "terraform init"
             }
-        }
-        stage('Plan Infrastructure') {
-            steps{
+            steps {
                 sh "terraform plan"
             }
         }
+        // stage('Plan Infrastructure') {
+        //     steps {
+        //         sh "terraform plan"
+        //     }
+        // }
     }   
 }
