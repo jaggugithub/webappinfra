@@ -6,5 +6,10 @@ pipeline {
                 sh "terraform init"
             }
         }
-    }    
+        stage('Plan Infrastructure') {
+            steps{
+                sh "terraform plan"
+            }
+        }
+    }   
 }
