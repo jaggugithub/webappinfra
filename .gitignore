@@ -2,3 +2,4 @@
 *.terraform.lock.hcl
 infra/.terraform/
 infra/*.terraform.lock.hcl
+terraform.*

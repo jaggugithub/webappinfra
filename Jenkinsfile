@@ -4,13 +4,22 @@ pipeline {
         stage('Initialize Infrastructure') {
             steps {
                 sh "terraform init"
+            }
+        }
+        stage('Plan Infrastructure') {
+            steps {
                 sh "terraform plan"
             }
         }
-        // stage('Plan Infrastructure') {
+        stage('Create Infrastructure') {
+            steps {
+                sh "terraform apply -auto-approve"
+            }
+        }
+        // stage('Destroy Infrastructure') {
         //     steps {
-        //         sh "terraform plan"
+        //         sh "terraform destroy -auto-approve"
         //     }
         // }
-    }   
+    }    
 }
