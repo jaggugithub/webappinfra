@@ -8,7 +8,5 @@ module "ec2_calling_module" {
   instancetype   = var.typeofinstance
   environment    = var.ENV
   servername     = var.instance_Name
-  keyname        = var.keyname
-  publickey      = var.PublicKey
 
 }

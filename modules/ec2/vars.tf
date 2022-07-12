@@ -18,11 +18,3 @@ variable "servername" {
 variable "environment" {
   type = string
 }
-
-variable "keyname" {
-  type = string
-}
-
-variable "publickey" {
-  type = string
-}
