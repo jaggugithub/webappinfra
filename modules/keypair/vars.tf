@@ -5,3 +5,7 @@ variable "keyname" {
 variable "publickey" {
   type = string
 }
+
+variable "keypairname" {
+  type = string
+}
