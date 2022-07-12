@@ -26,5 +26,5 @@ variable "ENV" {
 variable "instance_Name" {
   description = "Names Of the EC2 Instances"
   type        = list(string)
-  default     = ["JenkinsServer", "DockerServer"]
+  default     = ["TomcatServer", "DockerServer"]
 }
