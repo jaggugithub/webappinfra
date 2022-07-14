@@ -3,4 +3,5 @@ module "key_pair" {
 
   keyname   = var.Key-Name
   publickey = var.Public-Key
+
 }
