@@ -1,5 +1,7 @@
 module "default_vpc" {
 
-    vpc_Name = var.vpcname
-  
+    source = "git::https://github.com/jaggugithub/webappinfra.git//modules/vpc?ref=main"
+
+  vpc_Name = var.vpcname
+
 }
