@@ -8,5 +8,8 @@ module "ec2_calling_module" {
   instancetype   = var.typeofinstance
   environment    = var.ENV
   servername     = var.instance_Name
+  key = module.key_pair.key_name
+  SG = module.SG_module.security_group_id
+
 
 }
