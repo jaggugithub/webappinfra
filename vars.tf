@@ -39,10 +39,6 @@ variable "Key-Name" {
   default = "webapp-key"
 }
 
-variable "vpc_id" {
-  type    = string
-}
-
 variable "SGName" {
   type    = string
   default = "open_ssh"
@@ -52,3 +48,9 @@ variable "SGdescription" {
   type    = string
   default = "Allow SSH"
 }
+
+variable "vpcname" {
+  type    = string
+  default = "Default VPC"
+}
+

@@ -6,11 +6,7 @@ module "ec2_calling_module" {
   instance_count = var.instancecount
   ami_id         = data.aws_ami.ubuntu.id
   instancetype   = var.typeofinstance
-
-
-  tags = {
-    environment = var.ENV
-    servername  = var.instance_Name
-  }
+  environment    = var.ENV
+  servername     = var.instance_Name
 
 }
