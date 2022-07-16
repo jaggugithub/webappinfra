@@ -3,5 +3,3 @@
 infra/.terraform/
 infra/*.terraform.lock.hcl
 terraform.*
-keypaircallingmodule.tf
-modules/keypair/
