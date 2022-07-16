@@ -3,6 +3,6 @@ module "SG_module" {
 
   name        = var.SGName
   description = var.SGdescription
-  vpcid       = module.default_vpc.default.id
+  #vpcid       = module.default_vpc.default.id
 
 }

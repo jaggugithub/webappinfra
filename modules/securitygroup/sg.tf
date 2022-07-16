@@ -1,7 +1,7 @@
 resource "aws_security_group" "open_ssh" {
   name        = var.name
   description = var.description
-  vpc_id = var.vpcid
+  #vpc_id = var.vpcid
 
   ingress {
     description      = "Open SSH Port"
