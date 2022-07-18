@@ -1,7 +1,6 @@
-# variable "vpcid" {
-#   description = "vpc id"
-#   type        = string
-# }
+variable "vpc-id" {
+  type = string
+}
 
 variable "name" {
   type = string
@@ -9,4 +8,12 @@ variable "name" {
 
 variable "description" {
   type = string
+}
+
+variable "SG_Name" {
+  type = string
+}
+
+variable "sg_ingress_cidrblock" {
+  type = list(string)
 }

@@ -1,7 +1,8 @@
-module "default_vpc" {
+module "webapp_vpc" {
 
   source = "git::https://github.com/jaggugithub/webappinfra.git//modules/vpc?ref=main"
 
   vpc_Name = var.vpcname
+  vpc_cidrblock = var.vpccidrblock
 
 }

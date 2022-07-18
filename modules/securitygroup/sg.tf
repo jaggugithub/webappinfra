@@ -1,13 +1,14 @@
 resource "aws_security_group" "open_ssh" {
   name        = var.name
   description = var.description
-  #vpc_id = var.vpcid
+  vpc_id      = var.vpc-id
 
   ingress {
-    description      = "Open SSH Port"
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
+    description = "Open SSH Port"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = var.sg_ingress_cidrblock
   }
 
   egress {
@@ -19,6 +20,6 @@ resource "aws_security_group" "open_ssh" {
   }
 
   tags = {
-    Name = "SSH"
+    Name = var.SG_Name
   }
 }

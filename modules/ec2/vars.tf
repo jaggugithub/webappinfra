@@ -23,6 +23,10 @@ variable "key" {
   type = string
 }
 
-variable "SG" {
+variable "subnet-id" {
   type = string
+}
+
+variable "sgid" {
+  type = list(string)
 }

@@ -41,7 +41,12 @@ variable "Key-Name" {
 
 variable "SGName" {
   type    = string
-  default = "open_ssh"
+  default = "webapp-sg"
+}
+
+variable "sgname" {
+  type    = string
+  default = "Webapp-SG"
 }
 
 variable "SGdescription" {
@@ -51,6 +56,23 @@ variable "SGdescription" {
 
 variable "vpcname" {
   type    = string
-  default = "Default VPC"
+  default = "webapp-vpc"
 }
+
+variable "vpccidrblock" {
+  type    = string
+  default = "10.1.1.0/24"
+}
+
+variable "subnetname" {
+  type    = string
+  default = "webapp-subnet"
+}
+
+variable "subnet_cidrblock" {
+  type    = string
+  default = "10.1.1.0/26"
+}
+
+
 
