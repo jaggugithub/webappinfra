@@ -15,5 +15,5 @@ variable "SG_Name" {
 }
 
 variable "sg_ingress_cidrblock" {
-  type = list(string)
+  type = string
 }

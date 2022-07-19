@@ -4,7 +4,7 @@ resource "aws_instance" "webapp" {
   ami                    = var.ami_id
   instance_type          = var.instancetype
   key_name               = var.key
-  subnet_id              = var.subnet-id
+  subnet_id              = var.publicsubnet_id
   vpc_security_group_ids = var.sgid
 
   tags = {

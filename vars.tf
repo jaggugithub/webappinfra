@@ -64,14 +64,24 @@ variable "vpccidrblock" {
   default = "10.1.1.0/24"
 }
 
-variable "subnetname" {
+variable "publicsubnetname" {
   type    = string
-  default = "webapp-subnet"
+  default = "webapp-publicsubnet"
 }
 
-variable "subnet_cidrblock" {
+variable "publicsubnet_cidrblock" {
   type    = string
   default = "10.1.1.0/26"
+}
+
+variable "privatesubnetname" {
+  type    = string
+  default = "webapp-privatesubnet"
+}
+
+variable "privatesubnet_cidrblock" {
+  type    = string
+  default = "10.1.1.129/26"
 }
 
 

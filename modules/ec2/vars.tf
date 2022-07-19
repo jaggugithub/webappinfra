@@ -23,7 +23,7 @@ variable "key" {
   type = string
 }
 
-variable "subnet-id" {
+variable "publicsubnet_id" {
   type = string
 }
 
