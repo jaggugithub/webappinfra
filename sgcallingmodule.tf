@@ -6,6 +6,6 @@ module "SG_module" {
   name                 = var.SGName
   description          = var.SGdescription
   SG_Name              = var.sgname
-  sg_ingress_cidrblock = [module.publicsubnet_webapp.webapp_subnet_cidr]
+  sg_ingress_cidrblock = module.publicsubnet_webapp.webapp_subnet_cidr
 
 }
