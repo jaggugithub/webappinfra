@@ -81,7 +81,7 @@ variable "privatesubnetname" {
 
 variable "privatesubnet_cidrblock" {
   type    = string
-  default = "10.1.1.129/26"
+  default = "10.1.1.128/26"
 }
 
 variable "igname" {
