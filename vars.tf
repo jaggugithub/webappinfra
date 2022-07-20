@@ -84,5 +84,20 @@ variable "privatesubnet_cidrblock" {
   default = "10.1.1.129/26"
 }
 
+variable "igname" {
+  type    = string
+  default = "webapp-IG"
+}
+
+variable "rtcidr" {
+  type    = string
+  default = "0.0.0.0/0"
+}
+
+variable "routetablename" {
+  type    = string
+  default = "webapp-RT"
+}
+
 
 

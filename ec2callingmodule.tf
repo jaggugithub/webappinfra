@@ -8,7 +8,7 @@ module "ec2_calling_module" {
   environment     = var.ENV
   servername      = var.instance_Name
   key             = module.key_pair.keyname
-  publicsubnet_id = module.subnet_webapp.subnet_id
+  publicsubnet_id = module.publicsubnet_webapp.subnet_id
   sgid            = [module.SG_module.securitygroup_id]
 
 }
