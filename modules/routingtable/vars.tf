@@ -13,15 +13,3 @@ variable "rt_name" {
 variable "rt_cidr" {
   type = string
 }
-
-variable "rtsub_id" {
-  type = string
-}
-
-variable "rtig_id" {
-  type = string
-}
-
-variable "rtassociate_id" {
-  type = string
-}
