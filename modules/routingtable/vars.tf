@@ -1,3 +1,7 @@
+variable "vpc_rt" {
+  type = string
+}
+
 variable "ig_gateway" {
   type = string
 }

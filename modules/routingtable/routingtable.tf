@@ -1,8 +1,8 @@
 resource "aws_route_table" "webapp_rt" {
-  vpc_id = aws_vpc.example.id
+  vpc_id = var.vpc_rt
 
   route {
-    cidr_block = var.rt_cidr   #"0.0.0.0/0"
+    cidr_block = var.rt_cidr
     gateway_id = var.ig_gateway
   }
 
