@@ -13,8 +13,8 @@ module "public_rt_subnet_association" {
 
   source = "git::https://github.com/jaggugithub/webappinfra.git//modules/routingtable?ref=main"
 
-  rtsub_id          = module.publicsubnet_webapp.publicsubnet_id
-  rtsubassociate_id = module.pub_routetable_module.pub_routetable_id
+  pub_rtsub_id          = module.publicsubnet_webapp.publicsubnet_id
+  pub_rtsubassociate_id = module.pub_routetable_module.pub_routetable_id
 }
 
 module "private_routetable_module" {
@@ -23,7 +23,7 @@ module "private_routetable_module" {
 
   vpc_prirt     = module.webapp_vpc.vpc_id
   rt_pri_cidr    = var.privatesubnet_cidrblock
-  ig_pri_gateway = #module.webapp_ig.internet_gateway
+  nat_pri_gateway = module.webapp_nat.nat_gateway
   rt_pri_name    = var.privatertname
 
 }
@@ -32,6 +32,6 @@ module "private_rt_subnet_association" {
 
   source = "git::https://github.com/jaggugithub/webappinfra.git//modules/routingtable?ref=main"
 
-  rtsub_id          = module.privatesubnet_webapp.privatesubnet_id
-  rtsubassociate_id = module.private_routetable_module.pri_routetable_id
+  pri_rtsub_id          = module.privatesubnet_webapp.privatesubnet_id
+  pri_rtsubassociate_id = module.private_routetable_module.pri_routetable_id
 }

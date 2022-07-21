@@ -18,7 +18,7 @@ variable "vpc_prirt" {
   type = string
 }
 
-variable "ig_pri_gateway" {
+variable "nat_pri_gateway" {
   type = string
 }
 
@@ -30,10 +30,18 @@ variable "rt_pri_cidr" {
   type = string
 }
 
-variable "rtsub_id" {
+variable "pub_rtsub_id" {
   type = string
 }
 
-variable "rtsubassociate_id" {
+variable "pub_rtsubassociate_id" {
+  type = string
+}
+
+variable "pri_rtsub_id" {
+  type = string
+}
+
+variable "pri_rtsubassociate_id" {
   type = string
 }

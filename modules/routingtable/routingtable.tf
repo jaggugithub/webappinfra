@@ -16,7 +16,7 @@ resource "aws_route_table" "webapp_pri_rt" {
 
   route {
     cidr_block = var.rt_pri_cidr
-    gateway_id = var.ig_pri_gateway
+    gateway_id = var.nat_pri_gateway
   }
 
   tags = {
@@ -24,7 +24,12 @@ resource "aws_route_table" "webapp_pri_rt" {
   }
 }
 
-resource "aws_route_table_association" "webapp_rtassociate_subnet" {
-  subnet_id      = var.rtsub_id
-  route_table_id = var.rtsubassociate_id
+resource "aws_route_table_association" "pub_webapp_rtassociate_subnet" {
+  subnet_id      = var.pub_rtsub_id
+  route_table_id = var.pub_rtsubassociate_id
+}
+
+resource "aws_route_table_association" "pri_webapp_rtassociate_subnet" {
+  subnet_id      = var.pri_rtsub_id
+  route_table_id = var.pri_rtsubassociate_id
 }

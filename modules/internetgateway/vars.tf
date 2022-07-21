@@ -5,3 +5,11 @@ variable "IG_VPC" {
 variable "IG_name" {
     type = string
 }
+
+variable "nat_sub_id" {
+    type = string
+}
+
+variable "NAT_name" {
+    type = string
+}
