@@ -94,10 +94,12 @@ variable "rtcidr" {
   default = "0.0.0.0/0"
 }
 
-variable "routetablename" {
+variable "publicrtname" {
   type    = string
-  default = "webapp-RT"
+  default = "webapp-public-RT"
 }
 
-
-
+variable "privatertname" {
+  type    = string
+  default = "webapp-private-RT"
+}

@@ -6,7 +6,7 @@ resource "aws_instance" "webapp" {
   key_name                    = var.key
   subnet_id                   = var.publicsubnet_id
   vpc_security_group_ids      = var.sgid
-  associate_public_ip_address = true
+  #associate_public_ip_address = true
 
   tags = {
     Name        = var.servername[count.index]
