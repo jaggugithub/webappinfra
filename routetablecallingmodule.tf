@@ -5,7 +5,7 @@ module "pub_routetable_module" {
   vpc_pubrt     = module.webapp_vpc.vpc_id
   rt_pub_cidr    = var.publicsubnet_cidrblock
   ig_pub_gateway = module.webapp_ig.internet_gateway
-  rt_pub_name    = var.publicrtname
+  rt_pub_name    = ${var.publicrtname}
 
 }
 
