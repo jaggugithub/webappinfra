@@ -9,7 +9,7 @@ module "webapp_ig" {
 
 module "webapp_nat" {
 
-  source = "git::https://github.com/jaggugithub/webappinfra.git//modules/internetgateway?ref=main"
+  source = "git::https://github.com/jaggugithub/webappinfra.git//modules/natgateway?ref=main"
 
   nat_sub_id  = module.privatesubnet_webapp.privatesubnet_id
   NAT_name = var.natname
