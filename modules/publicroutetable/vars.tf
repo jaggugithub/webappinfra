@@ -13,11 +13,3 @@ variable "rt_pub_name" {
 variable "rt_pub_cidr" {
   type = string
 }
-
-variable "pub_rtsub_id" {
-  type = string
-}
-
-variable "pub_rtassociate_id" {
-  type = string
-}
