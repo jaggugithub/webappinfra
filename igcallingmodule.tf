@@ -9,7 +9,9 @@ module "webapp_ig" {
 
 module "webapp_nat_eip" {
 
-  source = "git::https://github.com/jaggugithub/webappinfra.git//modules/natgateway?ref=main"
+  source = "git::https://github.com/jaggugithub/webappinfra.git//modules/elasticip?ref=main"
+
+  eip_vpc = true
 
 }
 
