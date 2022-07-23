@@ -1,4 +1,4 @@
-module "webapp_vpc" {
+module "vpc" {
 
   source = "git::https://github.com/jaggugithub/webappinfra.git//modules/vpc?ref=main"
 

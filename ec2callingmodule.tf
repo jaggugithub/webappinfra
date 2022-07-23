@@ -1,4 +1,4 @@
-module "ec2_calling_module" {
+module "ec2" {
 
   source = "git::https://github.com/jaggugithub/webappinfra.git//modules/ec2?ref=main"
 
@@ -8,7 +8,7 @@ module "ec2_calling_module" {
   environment     = var.ENV
   servername      = var.instance_Name
   key             = module.key_pair.keyname
-  publicsubnet_id = module.publicsubnet_webapp.publicsubnet_id
+  publicsubnet_id = module.publicsubnet.publicsubnet_id
   sgid            = [module.SG_module.securitygroup_id]
 
 }
