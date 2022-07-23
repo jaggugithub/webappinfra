@@ -61,7 +61,7 @@ variable "vpcname" {
 
 variable "vpccidrblock" {
   type    = string
-  default = "10.1.1.0/24"
+  default = "35.1.1.0/24"
 }
 
 variable "publicsubnetname" {
