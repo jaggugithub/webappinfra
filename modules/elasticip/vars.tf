@@ -1,3 +1,3 @@
-variable "eip_bool" {
+variable "eip_vpc" {
   type = bool
 }
