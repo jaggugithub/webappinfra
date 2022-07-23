@@ -1,4 +1,4 @@
-variable "pub_rtig_id" {
+variable "pub_rtsubnet_id" {
   type = string
 }
 

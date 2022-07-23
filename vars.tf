@@ -108,3 +108,13 @@ variable "natname" {
   type    = string
   default = "webapp-NAT"
 }
+
+variable "public_route_cidr" {
+  type    = string
+  default = "0.0.0.0/0"
+}
+
+variable "private_route_cidr" {
+  type    = string
+  default = "0.0.0.0/0"
+}

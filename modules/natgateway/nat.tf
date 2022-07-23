@@ -1,8 +1,12 @@
 resource "aws_nat_gateway" "webapp_NAT" {
-  connectivity_type = "private"
-  subnet_id         = var.nat_sub_id
+  allocation_id = var.nat_allocation_eip
+  subnet_id     = var.nat_sub_id
 
-    tags = {
+  tags = {
     Name = var.NAT_name
   }
+}
+
+resource "aws_eip" "webapp_eip" {
+  vpc = true
 }
