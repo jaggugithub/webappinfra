@@ -71,7 +71,7 @@ variable "publicsubnetname" {
 
 variable "publicsubnet_cidrblock" {
   type    = string
-  default = "10.1.1.0/26"
+  default = "35.1.1.0/26"
 }
 
 variable "privatesubnetname" {
@@ -81,7 +81,7 @@ variable "privatesubnetname" {
 
 variable "privatesubnet_cidrblock" {
   type    = string
-  default = "10.1.1.128/26"
+  default = "35.1.1.128/26"
 }
 
 variable "igname" {
@@ -102,4 +102,9 @@ variable "publicrtname" {
 variable "privatertname" {
   type    = string
   default = "webapp-private-RT"
+}
+
+variable "natname" {
+  type    = string
+  default = "webapp-NAT"
 }
