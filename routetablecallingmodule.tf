@@ -13,7 +13,7 @@ module "public_rt_subnet_association" {
 
   source = "git::https://github.com/jaggugithub/webappinfra.git//modules/publicRTassociation?ref=main"
 
-  pub_rtsub_id       = module.publicsubnet_webapp.publicsubnet_id
+  pub_rtig_id       = module.webapp_ig.internet_gateway
   pub_rtassociate_id = module.pub_routetable_module.pub_routetable_id
 }
 
